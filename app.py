@@ -25,7 +25,7 @@ if uploaded_file is not None:
         with st.spinner("Analyzing road conditions..."):
             results = model(image) #Prediction
             res_plotted = results[0].plot()  #Plot result
-            res_image = Image.framarray(res_plotted[..., ::-1])  #Image from BGR to RGB for display
+            res_image = Image.fromarray(res_plotted[..., ::-1])  #Image from BGR to RGB for display
             st.success("Analysis Completed!")
             st.image(res_image, caption="Detected Potholes", use_column_width=True)
 
